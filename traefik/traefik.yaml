@@ -1,0 +1,33 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: traefik-deployment
+  labels:
+    app: traefik
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      serviceAccountName: traefik-account
+      containers:
+        - name: traefik
+          image: traefik:v3.0
+          args:
+            - --api.insecure
+            - --providers.kubernetesingress
+            - --entrypoints.vote.address=:5000
+            - --entrypoints.result.address=:5001
+          ports:
+            - name: dashboard
+              containerPort: 8080
+            - name: vote
+              containerPort: 5000
+            - name: result
+              containerPort: 5001
