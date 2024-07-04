@@ -24,6 +24,7 @@ spec:
             - --providers.kubernetesingress
             - --entrypoints.vote.address=:5000
             - --entrypoints.result.address=:5001
+            - --metrics.prometheus
           ports:
             - name: dashboard
               containerPort: 8080
