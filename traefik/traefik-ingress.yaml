@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: vote-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: vote
 spec:
   rules:
     - http:
@@ -18,6 +20,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: result-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: result
 spec:
   rules:
     - http:
