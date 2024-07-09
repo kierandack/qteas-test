@@ -1,6 +1,4 @@
 curl -sfL https://get.k3s.io | sh -
-git clone https://github.com/kierandack/qteas-test.git
-cd qteas-test
 kubectl create -f ./sample-app/.
 kubectl create -f ./traefik/traefik-account.yaml
 kubectl create -f ./traefik/traefik-role.yaml
