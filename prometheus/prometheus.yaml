@@ -5,7 +5,7 @@ metadata:
   name: prometheus
 spec:
   selector:
-    app: prometheusz2
+    app: prometheus
   type: NodePort
   ports:
     - port: 9090
