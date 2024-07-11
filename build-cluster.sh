@@ -9,3 +9,4 @@ kubectl create -f ./traefik/traefik.yaml
 kubectl create -f ./prometheus/prometheus-config.yaml
 kubectl create -f ./prometheus/prometheus-rbac.yaml
 kubectl create -f ./prometheus/prometheus.yaml
+kubectl create -f ./grafana/grafana.yaml
