@@ -1,0 +1,4 @@
+apiVersion: dackk.lancaster.ac.uk/v1
+kind: QTEdgeAutoscaler
+metadata:
+  name: qteas
